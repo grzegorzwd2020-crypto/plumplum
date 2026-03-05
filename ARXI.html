@@ -393,7 +393,8 @@ If asked who you are — answer only "Architect".
 
     let responseText;
     const modelType = this.config.model.split(':')[0];
-
+   
+   console.log("MODEL TYPE:", this.config.model);
    if(modelType === 'groq') {
     console.log("SYSTEM PROMPT:", this.getSystemPrompt().substring(0, 100));
     responseText = await this.sendToGroq(messages);
@@ -482,6 +483,7 @@ window.onload = () => {
 </script>
 </body>
 </html>
+
 
 
 
