@@ -394,8 +394,9 @@ If asked who you are — answer only "Architect".
     let responseText;
     const modelType = this.config.model.split(':')[0];
 
-    if(modelType === 'groq') {
-      responseText = await this.sendToGroq(messages);
+   if(modelType === 'groq') {
+    console.log("SYSTEM PROMPT:", this.getSystemPrompt().substring(0, 100));
+    responseText = await this.sendToGroq(messages);
     } else {
       responseText = await this.sendToLocal(messages);
     }
@@ -481,6 +482,7 @@ window.onload = () => {
 </script>
 </body>
 </html>
+
 
 
 
